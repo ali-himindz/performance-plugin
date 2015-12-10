@@ -4,14 +4,11 @@ import hudson.model.AbstractBuild;
 
 import java.io.IOException;
 import java.io.Serializable;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.xml.sax.SAXException;
 
@@ -23,9 +20,6 @@ import org.xml.sax.SAXException;
  */
 public class PerformanceReport extends AbstractReport implements Serializable,
 		Comparable<PerformanceReport> {
-	/** Logger. */
-	private static final Logger LOGGER = Logger
-			.getLogger(PerformanceReport.class.getName());
 
 	private static final long serialVersionUID = 675698410989941826L;
 
@@ -93,11 +87,7 @@ public class PerformanceReport extends AbstractReport implements Serializable,
 	}
 
 	public void addSample(HttpSample pHttpSample) throws SAXException {
-		LOGGER.log(Level.ALL, "Adding sample=" + pHttpSample);
 		String uri = pHttpSample.getUri();
-
-		LOGGER.log(Level.ALL, "URI=" + pHttpSample.getUri());
-
 		if (uri == null) {
 			buildAction
 					.getHudsonConsoleWriter()
