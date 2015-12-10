@@ -278,11 +278,12 @@ public class PerformancePublisher extends Recorder {
     double thresholdTolerance = 0.00000001;
     Result result = Result.SUCCESS;
     EnvVars env = build.getEnvironment(listener);
-
+    logger.println("Inside perform : modeOfThreshold="+modeOfThreshold);
     //For absolute error/unstable threshold..
     if (!modeOfThreshold) {
       try {
-        List<UriReport> curruriList = null;
+    	logger.println("modeOfThreshold is false");  
+    	List<UriReport> curruriList = null;
         HashMap<String, String> responseTimeThresholdMap = null;
 
         if (!"".equals(this.errorUnstableResponseTimeThreshold) && this.errorUnstableResponseTimeThreshold != null) {
@@ -460,9 +461,10 @@ public class PerformancePublisher extends Recorder {
           }
         }
       } catch(Exception e) {
+    	  logger.println("Exception :"+e.getMessage());
       }
     } else {
-
+      logger.println("modeOfThreshold is true");
       // For relative comparisons between builds...
       try {
 
@@ -766,6 +768,7 @@ public class PerformancePublisher extends Recorder {
         fw.close();
 
       } catch (Exception e){
+    	  logger.println("Exception2: "+e.getMessage());
       }
     }
     return true;

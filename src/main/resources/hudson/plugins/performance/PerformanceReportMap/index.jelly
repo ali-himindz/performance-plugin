@@ -20,7 +20,7 @@
            <tr class="${h.ifThenElse(uriReport.failed,'red','')}">
              <td class="left">
                <a href="./uriReport/${uriReport.encodeUriReport()}">
-               <st:out value="${uriReport.getShortUri()}" />
+               <st:out value="${uriReport.getUri()}" />
                </a>
              </td>
            <j:choose>

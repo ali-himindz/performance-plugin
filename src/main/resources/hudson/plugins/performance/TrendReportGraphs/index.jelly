@@ -15,7 +15,7 @@
          <tr>
           <td class="left">
               <a href="./uriReport/${it.getUriReport(URI).encodeUriReport()}">
-              <st:out value="${it.getUriReport(URI).getShortUri()}" />
+              <st:out value="${it.getUriReport(URI).getUri()}" />
               </a>
           </td>
           <j:choose>
