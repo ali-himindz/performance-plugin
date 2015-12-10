@@ -278,7 +278,6 @@ public class PerformancePublisher extends Recorder {
     double thresholdTolerance = 0.00000001;
     Result result = Result.SUCCESS;
     EnvVars env = build.getEnvironment(listener);
-    logger.println("Inside perform : modeOfThreshold="+modeOfThreshold);
     //For absolute error/unstable threshold..
     if (!modeOfThreshold) {
       try {
@@ -464,7 +463,6 @@ public class PerformancePublisher extends Recorder {
     	  logger.println("Exception :"+e.getMessage());
       }
     } else {
-      logger.println("modeOfThreshold is true");
       // For relative comparisons between builds...
       try {
 
